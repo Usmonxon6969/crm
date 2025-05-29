@@ -10,7 +10,7 @@ from django.contrib.auth.views import LogoutView as DjangoLogoutView
 class RegisterView(CreateView):
     form_class = CleanRegisterForm
     template_name = 'registration/register.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         user = form.save(commit=False)
