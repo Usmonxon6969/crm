@@ -17,8 +17,8 @@ COPY . /app
 # RUN python -m venv venv
 # RUN . venv/bin/activate
 
-COPY entrypoints.sh /entrypoints.sh
-ENTRYPOINT ["/entrypoints.sh"]
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 
 
 # Kerakli kutubxonalarni o'rnatish
