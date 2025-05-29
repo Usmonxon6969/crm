@@ -17,6 +17,10 @@ COPY . /app
 # RUN python -m venv venv
 # RUN . venv/bin/activate
 
+COPY entrypoints.sh /entrypoints.sh
+ENTRYPOINT ["/entrypoints.sh"]
+
+
 # Kerakli kutubxonalarni o'rnatish
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
