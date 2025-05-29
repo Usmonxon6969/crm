@@ -10,6 +10,8 @@ services:
     restart: always
     volumes:
       - static_volume:/app/staticfiles
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   static_volume:
