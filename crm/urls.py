@@ -21,13 +21,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # HTML Views
-    path('', auth_views.LoginView.as_view(template_name='registration/login.html'), name='home'),
+    path('dashboard/', DashboardView.as_view(template_name='home.html'), name='home'),
     path('leads/', contact_views.LeadListView.as_view(), name='lead-list'),
     path('leads/create/', contact_views.LeadCreateView.as_view(), name='lead-create'),
     path('leads/<int:pk>/edit/', contact_views.LeadUpdateView.as_view(), name='lead-update'),
 
     # Authentication - using Django's built-in views
-    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     path('register/', RegisterView.as_view(), name='register'),
     path('logout/', LogoutView.as_view(), name='logout'),
     # path('dashboard/', DashboardView.as_view(), name='home'),
